@@ -1,3 +1,6 @@
+#GuoXiaodong 
+#test git hub in mac.
+
 #learn R first demo
 a1 = c(1,5,3,7,2,8,9) # c(x,y,z) defines a 'collection' of numbers
 # as a vector
