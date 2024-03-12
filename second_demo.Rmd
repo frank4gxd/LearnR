@@ -1,0 +1,70 @@
+---
+title: "second_demo"
+author: "Xiaodong Guo"
+date: "2024-03-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+*code by guoxiaodong*
+
+~~**code by GuoXiaodong**~~
+
+***code by GuoXiaodong***
+```{r}
+#Create data
+set.seed(1)
+Ixos=rnorm(4000 , 120 , 30)     
+Primadur=rnorm(4000 , 200 , 30) 
+ 
+# First distribution
+hist(Ixos, breaks=30, xlim=c(0,300), col=rgb(1,0,0,0.5), xlab="height", 
+     ylab="nbr of plants", main="distribution of height of 2 durum wheat varieties" )
+
+# Second with add=T to plot on top
+hist(Primadur, breaks=30, xlim=c(0,300), col=rgb(0,0,1,0.5), add=T)
+
+# Add legend
+legend("topright", legend=c("Ixos","Primadur"), col=c(rgb(1,0,0,0.5), 
+     rgb(0,0,1,0.5)), pt.cex=2, pch=15 )
+
+```
+
+
+```{r,echo=TRUE}
+library(tidyverse)
+
+c <- rnorm(100,mean=50,sd=10)
+
+ggplot(mapping=aes(x=c-mean(c),y=dnorm(c,mean(c),sd(c))))+geom_point()+geom_smooth(method = "loess")
+
+
+
+source("subfunc/my_func.R")
+
+```
+
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
